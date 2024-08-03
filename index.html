@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.google.com/specimen/Karla">
+  <title>Frontend Mentor | Contact form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; margin: 0; position: absolute;
+        bottom: 10px; color: #000;  font-weight: 500; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="contact-form-container">
+    <div class="success-message" id="successMessag">
+        <p><strong>✔️ Message Sent!</strong></p>
+        <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
+    <form id="contactForm" method="post">
+        <h2>Contact Us</h2>
+
+        <div class="form-group">
+            <div class="form-row">
+                <div class="form-column">
+                    <label for="first_name">First Name <span class="required">*</span></label>
+                    <input type="text" name="first_name" id="first_name" required>
+                </div>
+                <div class="form-column">
+                    <label for="last_name">Last Name <span class="required">*</span></label>
+                    <input type="text" name="last_name" id="last_name" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address <span class="required">*</span></label>
+            <input type="email" name="email" id="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="query_type">Query Type <span class="required">*</span></label>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="query_type" value="general" required>
+                    General Enquiry
+                </label>
+                <label>
+                    <input type="radio" name="query_type" value="support" required>
+                    Support Request
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Message <span class="required">*</span></label>
+            <textarea name="message" id="message" rows="5" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label class="checkbox-group">
+                <input type="checkbox" name="consent" required>
+                I consent to being contacted by the team <span class="required">*</span>
+            </label>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+    
+</div>
+
+<!-- 
+  Contact Us
+
+  First Name
+  This field is required
+
+  Last Name
+  This field is required
+
+  Email Address
+  Please enter a valid email address
+  This field is required
+
+  Query Type
+  General Enquiry
+  Support Request
+  Please select a query type
+
+  Message
+  This field is required
+
+  I consent to being contacted by the team
+  To submit this form, please consent to being contacted
+
+  Submit
+
+  Message Sent!
+  Thanks for completing the form. We'll be in touch soon! -->
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/Joe-FE">Youssef Salem</a>.
+  </div>
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(event){
+        event.preventDefault(); // Prevent form from submitting normally
+        document.getElementById("successMessag").style.display = "block"; // Show success message
+    });
+</script>
+</body>
+</html>
